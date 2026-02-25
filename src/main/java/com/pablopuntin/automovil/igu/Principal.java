@@ -17,7 +17,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        BtnConsulta = new javax.swing.JButton();
+        btnConsul = new javax.swing.JButton();
         BtnAltaAuto = new javax.swing.JButton();
         BtnSalir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -29,10 +29,15 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("VENTA DE AUTOMOVILES");
 
-        BtnConsulta.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        BtnConsulta.setText("Consulta, edicion y eliminacion");
+        btnConsul.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        btnConsul.setText("Consulta, edicion y baja");
+        btnConsul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsulActionPerformed(evt);
+            }
+        });
 
-        BtnAltaAuto.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        BtnAltaAuto.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
         BtnAltaAuto.setText("Alta de Automoviles");
         BtnAltaAuto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -40,17 +45,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        BtnSalir.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        BtnSalir.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         BtnSalir.setText("Salir");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(BtnConsulta)
-                .addGap(61, 61, 61))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -58,17 +59,20 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(BtnAltaAuto))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(102, 102, 102)
-                        .addComponent(BtnSalir)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(BtnSalir))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(btnConsul)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(BtnAltaAuto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(BtnConsulta)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(btnConsul)
+                .addGap(29, 29, 29)
                 .addComponent(BtnSalir)
                 .addGap(24, 24, 24))
         );
@@ -81,13 +85,13 @@ public class Principal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(116, 116, 116))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41))))
@@ -97,7 +101,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,11 +132,18 @@ public class Principal extends javax.swing.JFrame {
         alta.setLocationRelativeTo(null);
     }//GEN-LAST:event_BtnAltaAutoActionPerformed
 
+    private void btnConsulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsulActionPerformed
+      ConsultaAutomovil consu = new ConsultaAutomovil();
+      consu.setVisible(true);
+     consu.setLocationRelativeTo(null);
+   
+    }//GEN-LAST:event_btnConsulActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAltaAuto;
-    private javax.swing.JButton BtnConsulta;
     private javax.swing.JButton BtnSalir;
+    private javax.swing.JButton btnConsul;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
