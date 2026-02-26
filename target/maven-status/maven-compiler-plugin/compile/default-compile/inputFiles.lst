@@ -1,0 +1,11 @@
+C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\logica\Controladora.java
+C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\igu\ConsultaAutomovil.java
+C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\persistencia\ControladoraPersistencia.java
+C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\persistencia\exceptions\NonexistentEntityException.java
+C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\igu\Principal.java
+C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\persistencia\exceptions\PreexistingEntityException.java
+C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\logica\Auto.java
+C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\igu\AltaAuto.java
+C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\persistencia\AutoJpaController.java
+C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\Automovil.java
+C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\persistencia\exceptions\IllegalOrphanException.java

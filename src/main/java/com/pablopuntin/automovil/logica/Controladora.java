@@ -1,6 +1,7 @@
 package com.pablopuntin.automovil.logica;
 
 import com.pablopuntin.automovil.persistencia.ControladoraPersistencia;
+import java.util.List;
 
 
 public class Controladora {
@@ -20,6 +21,10 @@ public class Controladora {
         auto.setCantPuertas(cantPuertas);
         
         controlPersis.agregarAutomovil(auto);
+    }
+
+    public List<Auto> traerAutos() {
+      return controlPersis.traerAtos();  
     }
     
 }

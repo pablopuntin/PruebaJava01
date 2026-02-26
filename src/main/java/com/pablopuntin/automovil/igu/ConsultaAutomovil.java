@@ -1,9 +1,15 @@
 
 package com.pablopuntin.automovil.igu;
 
+import com.pablopuntin.automovil.logica.Auto;
+import com.pablopuntin.automovil.logica.Controladora;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 
 public class ConsultaAutomovil extends javax.swing.JFrame {
 
+    Controladora control = new Controladora();
    
     public ConsultaAutomovil() {
         initComponents();
@@ -24,6 +30,11 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
         btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("CONSULTA DE AUTOMOVILES");
@@ -154,6 +165,12 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        //llamamos un metodo que creamos aparte para que sirva tambien para actualizar la ventana o llamar ese metodo desde otro lugar
+        
+        cargarTabla();
+    }//GEN-LAST:event_formWindowOpened
+
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -167,4 +184,44 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaConsulta;
     // End of variables declaration//GEN-END:variables
+
+    private void cargarTabla() {
+      //aca hacemos el metodo con el que manipulamos la tabla, el que nos serviria pára actualizar o si queremos hacer operaciones 
+      //en otras pantallas oon datos de esta table
+        
+      //hacemos no editable las filas
+      DefaultTableModel modeloTabla = new DefaultTableModel (){      
+          @Override
+          public boolean isCellEditable(int row, int column){
+              return false;
+          }
+            };
+      
+      //ponemos titulos a cada columna
+      String titulos [] = {"id", "Marca", "Modelo", "Motor", "Color", "Patente", "Puertas"};
+      
+        modeloTabla.setColumnIdentifiers(titulos);
+        
+        //traer los autos desde la bd (vamos a pedirlo a controladora de la logica
+        //,esta a la de persistencia y esta a la jpa y con los returns se devuelven magicamente a la igu
+        List <Auto> listaAutos = control.traerAutos();
+        //setear los datos en la tabla
+        
+        if(listaAutos !=null){
+            for (Auto auto : listaAutos){
+                Object[] object = {auto.getId(), auto.getMarca(), auto.getModelo(), auto.getMotor(), auto.getColor(), auto.getPatente(), auto.getCantPuertas()
+                };    
+                //meto la lista en el modelo de table
+                        modeloTabla.addRow(object);
+                           
+            }
+        }
+        
+        tablaConsulta.setModel(modeloTabla);
+
+        }
+    
+    
+    
+    
 }
