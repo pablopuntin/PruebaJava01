@@ -2,6 +2,7 @@
 package com.pablopuntin.automovil.igu;
 
 import com.pablopuntin.automovil.logica.Controladora;
+import javax.swing.JOptionPane;
 
 
 public class AltaAuto extends javax.swing.JFrame {
@@ -220,14 +221,18 @@ public class AltaAuto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+    
+    private void limpiarCampos(){
     txtMarca.setText("");
     txtModelo.setText("");
     txtMotor.setText("");
     txtColor.setText("");
     txtPatente.setText("");
     txtCantPuertas.setText("");
+    }
+    
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        limpiarCampos();
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
@@ -240,6 +245,11 @@ public class AltaAuto extends javax.swing.JFrame {
     int cantPuertas = Integer.parseInt(txtCantPuertas.getText());
     
         control.agregarAutomovil(marca, modelo, motor, color, patente, cantPuertas);
+        
+        //mensaje de confirmacion mas limpiar los campos
+        JOptionPane.showMessageDialog(this, "Auto agregado correctamente");
+        limpiarCampos();
+        
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void txtCantPuertasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantPuertasActionPerformed

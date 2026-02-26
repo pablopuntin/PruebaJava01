@@ -4,6 +4,7 @@ package com.pablopuntin.automovil.igu;
 import com.pablopuntin.automovil.logica.Auto;
 import com.pablopuntin.automovil.logica.Controladora;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -162,7 +163,22 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
+      //CONTROLAR QUE LA TABLA NO ESTE VACIA
+      if (tablaConsulta.getRowCount()>0){
+          
+          //despues valido que se haya seleccionado un registro
+         if (tablaConsulta.getSelectedRow()!=-1){
+             //obtener id del auto que quiero borrar
+              int idAuto = Integer.parseInt(
+         String.valueOf(tablaConsulta.getValueAt(tablaConsulta.getSelectedRow(),0 )));
+             
+              //pasamos idAuto a la logica
+              control.borrarAuto(idAuto);
+              JOptionPane.showMessageDialog(this, "Auto eliminado correctamente");
+              //actualizar la tabla
+              cargarTabla();
+         } 
+      }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
