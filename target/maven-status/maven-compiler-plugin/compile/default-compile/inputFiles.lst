@@ -4,6 +4,7 @@ C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\persist
 C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\persistencia\exceptions\NonexistentEntityException.java
 C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\igu\Principal.java
 C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\persistencia\exceptions\PreexistingEntityException.java
+C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\igu\ModifAuto.java
 C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\logica\Auto.java
 C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\igu\AltaAuto.java
 C:\Users\Pablo\Desktop\automovil\src\main\java\com\pablopuntin\automovil\persistencia\AutoJpaController.java

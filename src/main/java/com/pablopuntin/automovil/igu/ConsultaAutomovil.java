@@ -159,11 +159,8 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnModificarActionPerformed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-      //CONTROLAR QUE LA TABLA NO ESTE VACIA
+       
+         //CONTROLAR QUE LA TABLA NO ESTE VACIA
       if (tablaConsulta.getRowCount()>0){
           
           //despues valido que se haya seleccionado un registro
@@ -171,12 +168,28 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
              //obtener id del auto que quiero borrar
               int idAuto = Integer.parseInt(
          String.valueOf(tablaConsulta.getValueAt(tablaConsulta.getSelectedRow(),0 )));
+            ModifAuto modif = new ModifAuto(idAuto);
+            modif.setVisible(true);
+            modif.setLocationRelativeTo(null);
+            
+            this.dispose();
+    }//GEN-LAST:event_btnModificarActionPerformed
+      }
+    }
+
+      
+      
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+      //CONTROLAR QUE LA TABLA NO ESTE VACIA
+      if (tablaConsulta.getRowCount()>0){
+          
+          //despues valido que se haya seleccionado un registro
+         if (tablaConsulta.getSelectedRow()!=-1){
+             //obtener id del auto que quiero modificar
+              int idAuto = Integer.parseInt(
+         String.valueOf(tablaConsulta.getValueAt(tablaConsulta.getSelectedRow(),0 )));
              
-              //pasamos idAuto a la logica
-              control.borrarAuto(idAuto);
-              JOptionPane.showMessageDialog(this, "Auto eliminado correctamente");
-              //actualizar la tabla
-              cargarTabla();
+             
          } 
       }
     }//GEN-LAST:event_btnEliminarActionPerformed

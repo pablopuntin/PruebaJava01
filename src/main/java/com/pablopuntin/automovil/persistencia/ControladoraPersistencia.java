@@ -30,5 +30,9 @@ public class ControladoraPersistencia {
         }
         
     }
+
+    public Auto traerAuto(int idAuto) {
+     return autoJpa.findAuto(idAuto);
+    }
     
 }
