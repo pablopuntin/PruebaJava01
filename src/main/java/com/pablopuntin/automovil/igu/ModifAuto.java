@@ -3,6 +3,7 @@ package com.pablopuntin.automovil.igu;
 
 import com.pablopuntin.automovil.logica.Auto;
 import com.pablopuntin.automovil.logica.Controladora;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -262,19 +263,22 @@ public class ModifAuto extends javax.swing.JFrame {
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
 
-//        String marca = txtMarca.getText();
-//        String modelo = txtModelo.getText();
-//        String motor = txtMotor.getText();
-//        String color = txtColor.getText();
-//        String patente = txtPatente.getText();
-//        int cantPuertas = Integer.parseInt(txtCantPuertas.getText());
-//
-//        control.agregarAutomovil(marca, modelo, motor, color, patente, cantPuertas);
-//
-//        mensaje de confirmacion mas limpiar los campos
-//        JOptionPane.showMessageDialog(this, "Auto agregado correctamente");
-//        limpiarCampos();
-
+        //traer los datos del auto y los guardamos en variables auxiliares
+      String marca = txtMarca.getText();
+      String modelo = txtModelo.getText();
+      String motor = txtMotor.getText();
+      String color = txtColor.getText();
+      String patente = txtPatente.getText();
+      int cantPuertas = Integer.parseInt(txtCantPuertas.getText());
+      
+      control.modificarAuto(auto, marca,modelo, motor, color, patente, cantPuertas);
+      JOptionPane.showMessageDialog(this, "Auto modificado correctamente");
+      ConsultaAutomovil consul = new ConsultaAutomovil();
+      consul.setVisible(true);
+      consul.setLocationRelativeTo(null);
+      
+      this.dispose();
+      
     }//GEN-LAST:event_btnModificarActionPerformed
 
   
@@ -302,6 +306,14 @@ public class ModifAuto extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void cargarDatosAuto(int idAuto) {
-     auto = control.traerAuto(idAuto);
+     //busco el auto en la bd
+        auto = control.traerAuto(idAuto);
+     //seteo los valores de ese auto en mi forn
+        txtMarca.setText(auto.getMarca());
+        txtModelo.setText(auto.getModelo());
+        txtMotor.setText(auto.getMotor());
+        txtColor.setText(auto.getColor());
+        txtPatente.setText(auto.getPatente());
+        txtCantPuertas.setText(String.valueOf(auto.getCantPuertas()));
     }
 }
