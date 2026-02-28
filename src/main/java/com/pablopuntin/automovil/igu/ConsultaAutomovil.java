@@ -188,11 +188,13 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
           
           //despues valido que se haya seleccionado un registro
          if (tablaConsulta.getSelectedRow()!=-1){
-             //obtener id del auto que quiero modificar
-              int idAuto = Integer.parseInt(
-         String.valueOf(tablaConsulta.getValueAt(tablaConsulta.getSelectedRow(),0 )));
+             //obtener id del auto que quiero borrar
+              int idAuto =  (int) tablaConsulta.getValueAt(tablaConsulta.getSelectedRow(), 0);
+              
+             control.borrarAuto(idAuto);
+              JOptionPane.showMessageDialog(this, "Auto borrado exitosamente");
              
-             
+             cargarTabla();
          } 
       }
     }//GEN-LAST:event_btnEliminarActionPerformed
