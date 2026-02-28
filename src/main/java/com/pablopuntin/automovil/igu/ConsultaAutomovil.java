@@ -11,6 +11,7 @@ import javax.swing.table.DefaultTableModel;
 public class ConsultaAutomovil extends javax.swing.JFrame {
 
     Controladora control = new Controladora();
+    Principal principal = new Principal();
    
     public ConsultaAutomovil() {
         initComponents();
@@ -155,7 +156,9 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        // TODO add your handling code here:
+       principal.setVisible(true);
+       principal.setLocationRelativeTo(null);
+       this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
@@ -215,6 +218,15 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void cargarTabla() {
+        
+        // Creamos una fuente: Nombre, Estilo (Plano/Negrita), Tamaño
+java.awt.Font fuenteTabla = new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 18);
+
+// Aplicamos la fuente a la tabla
+tablaConsulta.setFont(fuenteTabla);
+
+// Opcional: Aumentar el alto de las filas para que el texto no quede apretado
+tablaConsulta.setRowHeight(30);
       //aca hacemos el metodo con el que manipulamos la tabla, el que nos serviria pára actualizar o si queremos hacer operaciones 
       //en otras pantallas oon datos de esta table
         

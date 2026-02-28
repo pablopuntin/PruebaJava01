@@ -17,6 +17,7 @@ com\pablopuntin\automovil\Automovil.class
 com\pablopuntin\automovil\igu\AltaAuto.class
 com\pablopuntin\automovil\igu\ConsultaAutomovil$2.class
 com\pablopuntin\automovil\igu\Principal$1.class
+com\pablopuntin\automovil\igu\ModifAuto$5.class
 com\pablopuntin\automovil\persistencia\exceptions\PreexistingEntityException.class
 com\pablopuntin\automovil\igu\ModifAuto$3.class
 com\pablopuntin\automovil\logica\Auto_.class

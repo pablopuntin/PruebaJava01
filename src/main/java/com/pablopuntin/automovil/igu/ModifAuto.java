@@ -13,6 +13,7 @@ public class ModifAuto extends javax.swing.JFrame {
     
     Controladora control = null;
     Auto auto = new Auto();
+    ConsultaAutomovil consul = new ConsultaAutomovil();
 
     public ModifAuto(int idAuto) {
         initComponents();
@@ -42,7 +43,7 @@ public class ModifAuto extends javax.swing.JFrame {
         txtMotor = new javax.swing.JTextField();
         txtModelo = new javax.swing.JTextField();
         btnLimpiar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -169,8 +170,13 @@ public class ModifAuto extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        jButton1.setText("Volver");
+        btnVolver.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
         btnModificar.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
         btnModificar.setText("Modificar");
@@ -194,7 +200,7 @@ public class ModifAuto extends javax.swing.JFrame {
                 .addGap(82, 82, 82)
                 .addComponent(btnLimpiar)
                 .addGap(82, 82, 82)
-                .addComponent(jButton1)
+                .addComponent(btnVolver)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnModificar)
                 .addGap(89, 89, 89))
@@ -219,7 +225,7 @@ public class ModifAuto extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnLimpiar)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnModificar))
                 .addContainerGap(69, Short.MAX_VALUE))
         );
@@ -281,12 +287,18 @@ public class ModifAuto extends javax.swing.JFrame {
       
     }//GEN-LAST:event_btnModificarActionPerformed
 
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+       consul.setVisible(true);
+       consul.setLocationRelativeTo(null);
+       this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
+
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

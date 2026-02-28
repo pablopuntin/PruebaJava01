@@ -36,7 +36,7 @@ public class AltaAuto extends javax.swing.JFrame {
         txtModelo = new javax.swing.JTextField();
         btnLimpiar = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        BTNvOLVER = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -171,8 +171,13 @@ public class AltaAuto extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        jButton1.setText("VOLVER");
+        BTNvOLVER.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        BTNvOLVER.setText("VOLVER");
+        BTNvOLVER.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTNvOLVERActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -182,7 +187,7 @@ public class AltaAuto extends javax.swing.JFrame {
                 .addGap(62, 62, 62)
                 .addComponent(btnLimpiar)
                 .addGap(82, 82, 82)
-                .addComponent(jButton1)
+                .addComponent(BTNvOLVER)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnAgregar)
                 .addGap(72, 72, 72))
@@ -213,7 +218,7 @@ public class AltaAuto extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpiar)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BTNvOLVER, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgregar))
                 .addGap(37, 37, 37))
         );
@@ -259,12 +264,16 @@ public class AltaAuto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMarcaActionPerformed
 
+    private void BTNvOLVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNvOLVERActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BTNvOLVERActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BTNvOLVER;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
